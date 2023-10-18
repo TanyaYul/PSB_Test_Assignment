@@ -4,13 +4,25 @@ namespace PSB_Test_Assignment
 {
     public class InputDataParser
     {
-        public string ReadInputData(string path)
-        {     
-            if (File.Exists(path))
+        public static string? ReadInputData(string path)
+        {                            
+            try
             {
-                return File.ReadAllText(path, Encoding.UTF8);
+                if (!File.Exists(path))
+                {
+                    throw new NullReferenceException("File not found!");
+                }
+                else
+                {
+                    return File.ReadAllText(path, Encoding.UTF8);
+                }
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine($"Exception: {e.Message}");
             }
 
+            Console.ReadLine();
             return null;
         }
 

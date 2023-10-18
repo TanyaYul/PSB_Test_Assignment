@@ -12,8 +12,8 @@
 
                 if (matchResult.TeamOne == matchResult.TeamTwo)
                 {
-                    teamOneScore += 1;
-                    teamTwoScore += 1;
+                    teamOneScore ++;
+                    teamTwoScore ++;
                 }
 
                 else if (matchResult.TeamOne > matchResult.TeamTwo)
@@ -25,9 +25,6 @@
                 {
                     teamTwoScore += 3;
                 }
-
-                //Исходя из логики, что за победу в домашних матчах дается 3 очка, за ничью 1 очко,  за поражение 0 очков.
-                //Вывести на экран количество очков, набранных каждой командой по итогам проведенных матчей.
             }
 
             return (teamOneScore, teamTwoScore);
